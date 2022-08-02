@@ -39,6 +39,7 @@ jobs:
           tags: |
             ghcr.io/marigold-dev/tezos-node-configurator:${{ github.event.inputs.version }}
             ghcr.io/marigold-dev/tezos-node-configurator:${{ github.sha }}
+            ghcr.io/marigold-dev/tezos-node-configurator:latest
 
       - name: Build and push tezos Snapshot Downloader
         id: docker_build_tezos_snapshot_downloader
@@ -53,6 +54,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/marigold-dev/tezos-snapshot-downloader:${{ github.event.inputs.version }}
+            ghcr.io/marigold-dev/tezos-snapshot-downloader:latest
 
       - name: Build and push tezos Storage Upgrader
         id: docker_build_tezos_storage_upgrader
@@ -67,4 +69,5 @@ jobs:
           push: true
           tags: |
             ghcr.io/marigold-dev/tezos-storage-upgrader:${{ github.event.inputs.version }}
+            ghcr.io/marigold-dev/tezos-storage-upgrader:latest
 
