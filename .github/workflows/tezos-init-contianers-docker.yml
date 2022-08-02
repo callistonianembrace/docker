@@ -53,4 +53,18 @@ jobs:
           push: true
           tags: |
             ghcr.io/marigold-dev/tezos-snapshot-downloader:${{ github.event.inputs.version }}
-            ghcr.io/marigold-dev/tezos-snapshot-downloader:${{ github.sha }}
+
+      - name: Build and push tezos Storage Upgrader
+        id: docker_build_tezos_storage_upgrader
+        uses: docker/build-push-action@v2
+        with:
+          context: ./storage-upgrader
+          platforms: linux/amd64
+          build-args: |
+            VERSION=${{ github.event.inputs.version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          push: true
+          tags: |
+            ghcr.io/marigold-dev/tezos-storage-upgrader:${{ github.event.inputs.version }}
+
