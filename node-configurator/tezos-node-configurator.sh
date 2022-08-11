@@ -27,6 +27,7 @@ mkdir -p ${node_dir}/data
 cat << EOF > ${node_dir}/data/config.json
 { "data-dir": "/var/run/tezos/node/data",
   "network": $network,
+  "metrics_addr": [ "0.0.0.0:9932" ],
   "rpc":
     {
       "listen-addrs": [ "0.0.0.0:8732" ],
